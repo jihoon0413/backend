@@ -13,7 +13,9 @@ public class PaymentOutboxScheduler {
 
     private final PaymentOutboxProcessor paymentOutboxProcessor;
 
-    @Scheduled(fixedDelay = 500)
+    // confirm/cancel 접수 이벤트까지 같은 relay를 타면서 건당 처리량(outbox 3건/요청)이 늘어
+    // 500ms/50건으로는 부하 상황에서 뒤로 밀리는 걸 확인함 - 주기를 줄여서 처리량을 늘림.
+    @Scheduled(fixedDelay = 100)
     public void processOutboxEvents() {
         paymentOutboxProcessor.postEvent();
     }

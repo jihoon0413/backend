@@ -8,6 +8,7 @@ import com.bubbletea.payment.global.exception.PaymentSystemException;
 import com.bubbletea.payment.repository.PaymentMethodRepository;
 import com.bubbletea.payment.repository.PaymentRepository;
 import com.bubbletea.payment.service.dto.PaymentReadyRequestDto;
+import com.bubbletea.payment.service.dto.PaymentStatusResponseDto;
 import com.bubbletea.payment.service.dto.data.PaymentConfirmData;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -67,9 +68,32 @@ public class PaymentService {
         Payment payment = paymentRepository.findByTossOrderId(tossOrderId)
                 .orElseThrow(() -> new PaymentSystemException(PaymentErrorCode.PAYMENT_NOT_FOUND));
 
-        if(payment.getStatus() != PaymentStatus.READY) {
+        // PROCESSING은 acceptConfirmRequest가 접수 시점에 전이시킨 상태 - 컨슈머가 실행할 때는 이미 PROCESSING이다.
+        if(payment.getStatus() != PaymentStatus.READY && payment.getStatus() != PaymentStatus.PROCESSING) {
             throw new PaymentSystemException(PaymentErrorCode.PAYMENT_NOT_READY);
         }
         return new PaymentConfirmData(payment.getId(), payment.getIdempotencyKey(), payment.getTotalAmount());
     }
+
+    @Transactional
+    public Long acceptConfirmRequest(String tossOrderId) {
+        Payment payment = paymentRepository.findByTossOrderId(tossOrderId)
+                .orElseThrow(() -> new PaymentSystemException(PaymentErrorCode.PAYMENT_NOT_FOUND));
+
+        if (payment.getStatus() != PaymentStatus.READY) {
+            throw new PaymentSystemException(PaymentErrorCode.PAYMENT_NOT_READY);
+        }
+
+        payment.changeStatus(PaymentStatus.PROCESSING);
+        return payment.getId();
+    }
+
+    @Transactional(readOnly = true)
+    public PaymentStatusResponseDto getPaymentStatus(Long paymentId) {
+        Payment payment = paymentRepository.findById(paymentId)
+                .orElseThrow(() -> new PaymentSystemException(PaymentErrorCode.PAYMENT_NOT_FOUND));
+
+        return new PaymentStatusResponseDto(payment.getId(), payment.getStatus().name());
+    }
+
 }

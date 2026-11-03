@@ -6,6 +6,7 @@ import com.bubbletea.payment.repository.PaymentOutboxRepository;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -36,18 +37,16 @@ public class PaymentOutboxProcessor {
             return;
         }
 
-        log.info("[Outbox Scheduler] 미발행 이벤트 {}건 발견. 발행을 시작합니다.", processingEvents.size());
+        log.info("[Outbox Scheduler] 미발행 이벤트 {}건 발견. 병렬 발행을 시작합니다.", processingEvents.size());
 
-        for (PaymentOutbox outbox : processingEvents) {
-            try {
-                outboxEventProcessor.sendToKafkaAndUpdateStatus(outbox);
-            } catch (Exception e) {
-                log.error("[Outbox Scheduler] 카프카 발행 중 에러 발생 (아웃박스 ID: {}). 다음 주기에 재시도합니다. 원인: {}",
-                        outbox.getId(), e.getMessage());
-                outboxRepository.rollbackMyProcessingToPending(processorId);
-                break;
-            }
-        }
+        // 건별 블로킹(.get()) 순차 발행 대신, 배치 전체를 동시에 보내고 다 끝날 때까지만 기다린다.
+        // 실패한 건은 각자 콜백에서 개별적으로 PENDING으로 되돌아가므로(sendToKafkaAndUpdateStatusAsync 내부),
+        // 한 건이 실패해도 나머지 배치를 막지 않는다.
+        List<CompletableFuture<Void>> futures = processingEvents.stream()
+                .map(outboxEventProcessor::sendToKafkaAndUpdateStatusAsync)
+                .toList();
+
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
     }
 
     public void cleanEvent() {
