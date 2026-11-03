@@ -4,11 +4,8 @@ spring:
   config:
     import: "configserver:${CONFIG_SERVER_URL:http://localhost:8888}"
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:paymentdb}
-    username: ${POSTGRES_USER:payment_user}
-    password: ${POSTGRES_PASSWORD:payment_pass}
+  # datasource는 config-server의 payment-service.yml이 환경(host=postgres)별로 내려준다.
+  # 여기서 재정의하면 뒤에 오는 로컬 값이 config-server 값을 덮어써서 docker 환경에서 연결이 깨진다.
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
@@ -25,3 +22,32 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+
+server:
+  tomcat:
+    # Micrometer의 tomcat.threads.* (busy/config.max)는 mbean registry가 꺼져있으면 수집되지 않는다.
+    mbeanregistry:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.95, 0.99
+
+resilience4j:
+  # circuitbreaker/retry 설정은 config-server의 payment-service.yml이 내려준다(환경무관 정책값이라 거기가 맞음).
+  # timelimiter는 아직 config-repo에 못 올려서(외부 저장소 push 필요) 임시로 로컬에 둠 - 나중에 옮길 것.
+  timelimiter:
+    instances:
+      brandpayTimeLimiter:
+        timeout-duration: 3s
+        cancel-running-future: true

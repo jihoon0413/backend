@@ -16,8 +16,12 @@ import feign.FeignException;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeoutException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,6 +39,8 @@ public class TossBrandpayApiClient {
     private String apiSecretKey;
 
     private final TossFeignClient tossFeignClient;
+    // 필드명 = 빈 이름으로 매칭됨 (Executor 타입 빈이 여러 개라 이름으로 구분)
+    private final Executor tossCallExecutor;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public TossAccessTokenResponseDto getAccessToken(String customerKey, String code) {
@@ -72,42 +78,48 @@ public class TossBrandpayApiClient {
         }
     }
 
+    /**
+     * CircuitBreaker만으론 "진행 중인" 느린 호출 자체를 못 끊는다 - 호출이 끝나야 그 결과를 집계해서
+     * 열지 말지 판단하기 때문. TimeLimiter를 얹어서 brandpayTimeLimiter.timeout-duration을 넘기면
+     * 강제로 TimeoutException을 던지게 한다. TimeLimiter는 비동기(CompletableFuture) 반환형에만
+     * 적용되므로 실제 블로킹 호출은 tossCallExecutor 위에서 돌리고 Future로 감싼다.
+     */
     @CircuitBreaker(name = "brandpayCircuitBreaker", fallbackMethod = "confirmBrandpayFallback")
-    public PaymentConfirmResponseDto confirmBrandpay(PaymentConfirmRequestDto dto, String idempotencyKey) {
-        String encodedToken = getBasicAuthHeader();
-//        String encodedToken = "err";
+    @TimeLimiter(name = "brandpayTimeLimiter")
+    public CompletableFuture<PaymentConfirmResponseDto> confirmBrandpay(PaymentConfirmRequestDto dto, String idempotencyKey) {
+        return CompletableFuture.supplyAsync(() -> {
+            String encodedToken = getBasicAuthHeader();
 
-        log.info("Brandpay Confirm Request - OrderId: {}, Idempotency: {}", dto.orderId(), idempotencyKey);
+            log.info("Brandpay Confirm Request - OrderId: {}, Idempotency: {}", dto.orderId(), idempotencyKey);
 
-        try {
-//            EXPIRED_CARD, REJECT_CARD_PAYMENT, INSUFFICIENT_BALANCE,
-//            CONFIRM_TIMEOUT, INTERNAL_SERVER_ERROR
-//            String testErrorTriggerCode = "INTERNAL_SERVER_ERROR";
-
-            return tossFeignClient.confirmBrandpay(encodedToken, idempotencyKey, dto);
-        } catch (FeignException e) {
-            if (e.status() >= 500 || e.status() == 429) {
-                log.warn("토스 API 일시적 오류. 재시도를 트리거합니다. Status: {}", e.status());
-                throw e;
+            try {
+                return tossFeignClient.confirmBrandpay(encodedToken, idempotencyKey, dto);
+            } catch (FeignException e) {
+                if (e.status() >= 500 || e.status() == 429) {
+                    log.warn("토스 API 일시적 오류. 재시도를 트리거합니다. Status: {}", e.status());
+                    throw e;
+                }
+                log.error("Brandpay Confirm Client Error (4xx): {}", e.contentUTF8());
+                throw new PaymentTossApiException(PaymentErrorCode.TOSS_PAYMENT_REJECTED);
+            } catch (Exception e) {
+                throw new PaymentSystemException(PaymentErrorCode.UNAUTHORIZED_ACCESS);
             }
-            log.error("Brandpay Confirm Client Error (4xx): {}", e.contentUTF8());
-            throw new PaymentTossApiException(PaymentErrorCode.TOSS_PAYMENT_REJECTED);
-        } catch (Exception e) {
-            throw new PaymentSystemException(PaymentErrorCode.UNAUTHORIZED_ACCESS);
-        }
+        }, tossCallExecutor);
     }
 
-    public PaymentConfirmResponseDto confirmBrandpayFallback(PaymentConfirmRequestDto dto, String idempotencyKey, Throwable t) {
+    public CompletableFuture<PaymentConfirmResponseDto> confirmBrandpayFallback(PaymentConfirmRequestDto dto, String idempotencyKey, Throwable t) {
         if (t instanceof PaymentTossApiException) {
-            throw (PaymentTossApiException) t;
+            return CompletableFuture.failedFuture(t);
         }
-        
+
         if (t instanceof CallNotPermittedException) {
             log.error("🚨 [Fast-Fail] 토스 서버 장애 지속으로 인해 서킷 브레이커가 요청을 즉시 차단함. OrderId: {}", dto.orderId());
+        } else if (t instanceof TimeoutException) {
+            log.error("⏱ [Timeout] 토스 응답이 제한시간 내에 오지 않아 강제로 실패 처리함. OrderId: {}", dto.orderId());
         } else {
             log.error("단건 결제 최종 실패 - OrderId: {}, Cause: {}", dto.orderId(), t.getMessage());
         }
-        throw new PaymentTossApiException(PaymentErrorCode.EXTERNAL_SERVER_ERROR);
+        return CompletableFuture.failedFuture(new PaymentTossApiException(PaymentErrorCode.EXTERNAL_SERVER_ERROR));
     }
 
     @Retry(name = "billingRetry", fallbackMethod = "executeBillingFallback")

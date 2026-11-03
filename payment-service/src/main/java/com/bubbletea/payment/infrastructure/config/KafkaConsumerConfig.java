@@ -1,6 +1,8 @@
 package com.bubbletea.payment.infrastructure.config;
 
 import com.bubbletea.payment.infrastructure.kafka.dto.BillingEvent;
+import com.bubbletea.payment.infrastructure.kafka.dto.CancelRequestedEvent;
+import com.bubbletea.payment.service.dto.PaymentConfirmRequestDto;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -53,6 +55,67 @@ public class KafkaConsumerConfig {
 
         factory.setConsumerFactory(consumerFactory());
         // ack.acknowledge()가 정상 동작하기 위해 반드시 필요한 설정!
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+
+        return factory;
+    }
+
+    // confirm/cancel 요청을 처리하는 전용 컨슈머 풀 - Tomcat 스레드 풀과 완전히 분리된,
+    // 작고 고정된 크기의 풀이라 Toss가 느려져도 여기서만 블로킹되고 다른 HTTP 요청엔 전파되지 않는다.
+
+    @Bean
+    public DefaultKafkaConsumerFactory<String, PaymentConfirmRequestDto> confirmRequestConsumerFactory() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "confirm-execution-group");
+        props.put(ConsumerConfig.ISOLATION_LEVEL_CONFIG, "read_committed");
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
+
+        JacksonJsonDeserializer<PaymentConfirmRequestDto> deserializer =
+                new JacksonJsonDeserializer<>(PaymentConfirmRequestDto.class);
+        deserializer.addTrustedPackages("*");
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+
+        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, PaymentConfirmRequestDto> confirmRequestKafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, PaymentConfirmRequestDto> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+
+        factory.setConsumerFactory(confirmRequestConsumerFactory());
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+
+        return factory;
+    }
+
+    @Bean
+    public DefaultKafkaConsumerFactory<String, CancelRequestedEvent> cancelRequestConsumerFactory() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "cancel-execution-group");
+        props.put(ConsumerConfig.ISOLATION_LEVEL_CONFIG, "read_committed");
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
+
+        JacksonJsonDeserializer<CancelRequestedEvent> deserializer =
+                new JacksonJsonDeserializer<>(CancelRequestedEvent.class);
+        deserializer.addTrustedPackages("*");
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+
+        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, CancelRequestedEvent> cancelRequestKafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, CancelRequestedEvent> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+
+        factory.setConsumerFactory(cancelRequestConsumerFactory());
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 
         return factory;

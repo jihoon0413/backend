@@ -1,0 +1,418 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: facade-isolation-cancel-test.js
+        output: Prometheus remote write (http://localhost:9090/api/v1/write)
+
+     scenarios: (100.00%) 2 scenarios, 850 max VUs, 1m30s max duration (incl. graceful stop):
+              * control_traffic: 20.00 iterations/s for 1m0s (maxVUs: 10-50, exec: hitControlEndpoint, gracefulStop: 30s)
+              * pg_slow_cancel: 20.00 iterations/s for 1m0s (maxVUs: 50-800, exec: cancelPayment, gracefulStop: 30s)
+
+
+running (0m01.0s), 020/060 VUs, 20 complete and 0 interrupted iterations
+control_traffic   [   2% ] 00/10 VUs    0m01.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   2% ] 020/050 VUs  0m01.0s/1m0s  20.00 iters/s
+
+running (0m02.0s), 040/060 VUs, 40 complete and 0 interrupted iterations
+control_traffic   [   3% ] 00/10 VUs    0m02.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   3% ] 040/050 VUs  0m02.0s/1m0s  20.00 iters/s
+
+running (0m03.0s), 055/065 VUs, 60 complete and 0 interrupted iterations
+control_traffic   [   5% ] 00/10 VUs    0m03.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   5% ] 055/055 VUs  0m03.0s/1m0s  20.00 iters/s
+
+running (0m04.0s), 065/075 VUs, 80 complete and 0 interrupted iterations
+control_traffic   [   7% ] 00/10 VUs    0m04.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   7% ] 065/065 VUs  0m04.0s/1m0s  20.00 iters/s
+
+running (0m05.0s), 074/084 VUs, 100 complete and 0 interrupted iterations
+control_traffic   [   8% ] 00/10 VUs    0m05.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   8% ] 074/074 VUs  0m05.0s/1m0s  20.00 iters/s
+
+running (0m06.0s), 084/094 VUs, 120 complete and 0 interrupted iterations
+control_traffic   [  10% ] 00/10 VUs    0m06.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  10% ] 084/084 VUs  0m06.0s/1m0s  20.00 iters/s
+
+running (0m07.0s), 094/104 VUs, 140 complete and 0 interrupted iterations
+control_traffic   [  12% ] 00/10 VUs    0m07.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  12% ] 094/094 VUs  0m07.0s/1m0s  20.00 iters/s
+
+running (0m08.0s), 104/114 VUs, 160 complete and 0 interrupted iterations
+control_traffic   [  13% ] 00/10 VUs    0m08.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  13% ] 104/104 VUs  0m08.0s/1m0s  20.00 iters/s
+
+running (0m10.7s), 110/120 VUs, 165 complete and 0 interrupted iterations
+control_traffic   [  18% ] 02/11 VUs    0m10.7s/1m0s  20.00 iters/s
+pg_slow_cancel    [  18% ] 108/109 VUs  0m10.7s/1m0s  20.00 iters/s
+
+running (0m11.0s), 124/124 VUs, 166 complete and 0 interrupted iterations
+control_traffic   [  18% ] 13/13 VUs    0m11.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  18% ] 111/111 VUs  0m11.0s/1m0s  20.00 iters/s
+
+running (0m12.0s), 117/132 VUs, 205 complete and 0 interrupted iterations
+control_traffic   [  20% ] 00/15 VUs    0m12.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  20% ] 117/117 VUs  0m12.0s/1m0s  20.00 iters/s
+
+running (0m13.0s), 125/141 VUs, 226 complete and 0 interrupted iterations
+control_traffic   [  22% ] 00/15 VUs    0m13.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  22% ] 125/126 VUs  0m13.0s/1m0s  20.00 iters/s
+
+running (0m14.0s), 136/151 VUs, 247 complete and 0 interrupted iterations
+control_traffic   [  23% ] 00/15 VUs    0m14.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  23% ] 136/136 VUs  0m14.0s/1m0s  20.00 iters/s
+
+running (0m17.0s), 141/156 VUs, 255 complete and 0 interrupted iterations
+control_traffic   [  28% ] 00/15 VUs    0m17.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  28% ] 141/141 VUs  0m17.0s/1m0s  20.00 iters/s
+
+running (0m17.0s), 155/157 VUs, 255 complete and 0 interrupted iterations
+control_traffic   [  28% ] 14/16 VUs    0m17.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  28% ] 141/141 VUs  0m17.0s/1m0s  20.00 iters/s
+
+running (0m18.0s), 151/168 VUs, 287 complete and 0 interrupted iterations
+control_traffic   [  30% ] 01/18 VUs    0m18.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  30% ] 150/150 VUs  0m18.0s/1m0s  20.00 iters/s
+
+running (0m19.0s), 158/173 VUs, 305 complete and 0 interrupted iterations
+control_traffic   [  32% ] 03/18 VUs    0m19.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  32% ] 155/155 VUs  0m19.0s/1m0s  20.00 iters/s
+
+running (0m20.1s), 170/179 VUs, 321 complete and 0 interrupted iterations
+control_traffic   [  34% ] 10/18 VUs    0m20.1s/1m0s  20.00 iters/s
+pg_slow_cancel    [  34% ] 160/161 VUs  0m20.1s/1m0s  20.00 iters/s
+
+running (0m21.0s), 165/183 VUs, 357 complete and 0 interrupted iterations
+control_traffic   [  35% ] 00/18 VUs    0m21.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  35% ] 165/165 VUs  0m21.0s/1m0s  20.00 iters/s
+
+running (0m22.0s), 175/193 VUs, 377 complete and 0 interrupted iterations
+control_traffic   [  37% ] 00/18 VUs    0m22.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  37% ] 175/175 VUs  0m22.0s/1m0s  20.00 iters/s
+
+running (0m23.2s), 188/204 VUs, 398 complete and 0 interrupted iterations
+control_traffic   [  39% ] 03/18 VUs    0m23.2s/1m0s  20.00 iters/s
+pg_slow_cancel    [  39% ] 185/186 VUs  0m23.2s/1m0s  20.00 iters/s
+
+running (0m24.0s), 193/212 VUs, 418 complete and 0 interrupted iterations
+control_traffic   [  40% ] 00/18 VUs    0m24.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  40% ] 193/194 VUs  0m24.0s/1m0s  20.00 iters/s
+
+running (0m25.0s), 203/222 VUs, 438 complete and 0 interrupted iterations
+control_traffic   [  42% ] 00/18 VUs    0m25.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  42% ] 203/204 VUs  0m25.0s/1m0s  20.00 iters/s
+
+running (0m26.0s), 213/232 VUs, 458 complete and 0 interrupted iterations
+control_traffic   [  43% ] 00/18 VUs    0m26.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  43% ] 213/214 VUs  0m26.0s/1m0s  20.00 iters/s
+
+running (0m27.0s), 223/242 VUs, 478 complete and 0 interrupted iterations
+control_traffic   [  45% ] 00/18 VUs    0m27.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  45% ] 223/224 VUs  0m27.0s/1m0s  20.00 iters/s
+
+running (0m28.0s), 233/251 VUs, 499 complete and 0 interrupted iterations
+control_traffic   [  47% ] 00/18 VUs    0m28.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  47% ] 233/233 VUs  0m28.0s/1m0s  20.00 iters/s
+
+running (0m29.0s), 239/257 VUs, 527 complete and 0 interrupted iterations
+control_traffic   [  48% ] 00/18 VUs    0m29.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  48% ] 239/239 VUs  0m29.0s/1m0s  20.00 iters/s
+
+running (0m30.0s), 248/267 VUs, 548 complete and 0 interrupted iterations
+control_traffic   [  50% ] 00/18 VUs    0m30.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  50% ] 248/249 VUs  0m30.0s/1m0s  20.00 iters/s
+
+running (0m31.0s), 258/277 VUs, 568 complete and 0 interrupted iterations
+control_traffic   [  52% ] 00/18 VUs    0m31.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  52% ] 258/259 VUs  0m31.0s/1m0s  20.00 iters/s
+
+running (0m32.3s), 266/284 VUs, 583 complete and 0 interrupted iterations
+control_traffic   [  54% ] 00/18 VUs    0m32.3s/1m0s  20.00 iters/s
+pg_slow_cancel    [  54% ] 266/266 VUs  0m32.3s/1m0s  20.00 iters/s
+
+running (0m33.0s), 273/291 VUs, 608 complete and 0 interrupted iterations
+control_traffic   [  55% ] 00/18 VUs    0m33.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  55% ] 273/273 VUs  0m33.0s/1m0s  20.00 iters/s
+
+running (0m34.0s), 283/301 VUs, 628 complete and 0 interrupted iterations
+control_traffic   [  57% ] 00/18 VUs    0m34.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  57% ] 283/283 VUs  0m34.0s/1m0s  20.00 iters/s
+
+running (0m35.0s), 293/311 VUs, 648 complete and 0 interrupted iterations
+control_traffic   [  58% ] 00/18 VUs    0m35.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  58% ] 293/293 VUs  0m35.0s/1m0s  20.00 iters/s
+
+running (0m36.0s), 298/319 VUs, 675 complete and 0 interrupted iterations
+control_traffic   [  60% ] 00/18 VUs    0m36.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  60% ] 298/301 VUs  0m36.0s/1m0s  20.00 iters/s
+
+running (0m37.0s), 309/328 VUs, 695 complete and 0 interrupted iterations
+control_traffic   [  62% ] 00/18 VUs    0m37.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  62% ] 309/310 VUs  0m37.0s/1m0s  20.00 iters/s
+
+running (0m38.0s), 318/336 VUs, 718 complete and 0 interrupted iterations
+control_traffic   [  63% ] 00/18 VUs    0m38.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  63% ] 318/318 VUs  0m38.0s/1m0s  20.00 iters/s
+
+running (0m39.0s), 328/346 VUs, 738 complete and 0 interrupted iterations
+control_traffic   [  65% ] 00/18 VUs    0m39.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  65% ] 328/328 VUs  0m39.0s/1m0s  20.00 iters/s
+
+running (0m40.0s), 338/356 VUs, 758 complete and 0 interrupted iterations
+control_traffic   [  67% ] 00/18 VUs    0m40.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  67% ] 338/338 VUs  0m40.0s/1m0s  20.00 iters/s
+
+running (0m43.4s), 345/365 VUs, 772 complete and 0 interrupted iterations
+control_traffic   [  72% ] 00/19 VUs    0m43.4s/1m0s  20.00 iters/s
+pg_slow_cancel    [  72% ] 345/346 VUs  0m43.4s/1m0s  20.00 iters/s
+
+running (0m44.0s), 374/376 VUs, 773 complete and 0 interrupted iterations
+control_traffic   [  73% ] 23/24 VUs    0m44.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  73% ] 351/352 VUs  0m44.0s/1m0s  20.00 iters/s
+
+running (0m45.0s), 361/386 VUs, 816 complete and 0 interrupted iterations
+control_traffic   [  75% ] 00/25 VUs    0m45.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  75% ] 361/361 VUs  0m45.0s/1m0s  20.00 iters/s
+
+running (0m46.0s), 366/392 VUs, 845 complete and 0 interrupted iterations
+control_traffic   [  77% ] 00/25 VUs    0m46.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  77% ] 366/367 VUs  0m46.0s/1m0s  20.00 iters/s
+
+running (0m47.0s), 376/402 VUs, 865 complete and 0 interrupted iterations
+control_traffic   [  78% ] 00/25 VUs    0m47.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  78% ] 376/377 VUs  0m47.0s/1m0s  20.00 iters/s
+
+running (0m48.0s), 386/412 VUs, 885 complete and 0 interrupted iterations
+control_traffic   [  80% ] 00/25 VUs    0m48.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  80% ] 386/387 VUs  0m48.0s/1m0s  20.00 iters/s
+
+running (0m49.0s), 396/422 VUs, 905 complete and 0 interrupted iterations
+control_traffic   [  82% ] 00/25 VUs    0m49.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  82% ] 396/397 VUs  0m49.0s/1m0s  20.00 iters/s
+
+running (0m50.0s), 406/432 VUs, 925 complete and 0 interrupted iterations
+control_traffic   [  83% ] 00/25 VUs    0m50.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  83% ] 406/407 VUs  0m50.0s/1m0s  20.00 iters/s
+
+running (0m51.0s), 428/436 VUs, 929 complete and 0 interrupted iterations
+control_traffic   [  85% ] 17/25 VUs    0m51.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  85% ] 411/411 VUs  0m51.0s/1m0s  20.00 iters/s
+
+running (0m52.0s), 420/446 VUs, 965 complete and 0 interrupted iterations
+control_traffic   [  87% ] 00/25 VUs    0m52.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  87% ] 420/421 VUs  0m52.0s/1m0s  20.00 iters/s
+
+running (0m53.0s), 428/455 VUs, 988 complete and 0 interrupted iterations
+control_traffic   [  88% ] 00/25 VUs    0m53.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  88% ] 428/430 VUs  0m53.0s/1m0s  20.00 iters/s
+
+running (0m54.0s), 434/459 VUs, 1018 complete and 0 interrupted iterations
+control_traffic   [  90% ] 00/25 VUs    0m54.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  90% ] 434/434 VUs  0m54.0s/1m0s  20.00 iters/s
+
+running (0m55.0s), 439/465 VUs, 1047 complete and 0 interrupted iterations
+control_traffic   [  92% ] 00/25 VUs    0m55.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  92% ] 439/440 VUs  0m55.0s/1m0s  20.00 iters/s
+
+running (0m56.0s), 446/473 VUs, 1072 complete and 0 interrupted iterations
+control_traffic   [  93% ] 00/25 VUs    0m56.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  93% ] 446/448 VUs  0m56.0s/1m0s  20.00 iters/s
+
+running (0m57.0s), 455/481 VUs, 1095 complete and 0 interrupted iterations
+control_traffic   [  95% ] 00/25 VUs    0m57.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  95% ] 455/456 VUs  0m57.0s/1m0s  20.00 iters/s
+
+running (0m58.0s), 456/485 VUs, 1130 complete and 0 interrupted iterations
+control_traffic   [  97% ] 00/25 VUs    0m58.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  97% ] 456/460 VUs  0m58.0s/1m0s  20.00 iters/s
+
+running (0m59.0s), 465/492 VUs, 1154 complete and 0 interrupted iterations
+control_traffic   [  98% ] 00/25 VUs    0m59.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  98% ] 465/467 VUs  0m59.0s/1m0s  20.00 iters/s
+
+running (1m00.0s), 471/496 VUs, 1184 complete and 0 interrupted iterations
+control_traffic   [ 100% ] 00/25 VUs    1m00.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [ 100% ] 471/471 VUs  1m00.0s/1m0s  20.00 iters/s
+
+running (1m01.0s), 461/497 VUs, 1195 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m02.0s), 460/497 VUs, 1196 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m03.0s), 445/497 VUs, 1211 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m04.0s), 429/497 VUs, 1227 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m05.0s), 428/497 VUs, 1228 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m06.0s), 420/497 VUs, 1236 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m07.0s), 416/497 VUs, 1240 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m08.0s), 411/497 VUs, 1245 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m09.0s), 395/497 VUs, 1261 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m10.0s), 386/497 VUs, 1270 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m11.0s), 380/497 VUs, 1276 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m12.0s), 366/497 VUs, 1290 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m13.0s), 360/497 VUs, 1296 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m14.0s), 350/497 VUs, 1306 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m15.0s), 337/497 VUs, 1319 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m16.0s), 323/497 VUs, 1333 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m17.0s), 316/497 VUs, 1340 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m18.0s), 301/497 VUs, 1355 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m19.0s), 289/497 VUs, 1367 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m20.0s), 285/497 VUs, 1371 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m21.0s), 276/497 VUs, 1380 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m22.0s), 266/497 VUs, 1390 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m23.0s), 262/497 VUs, 1394 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m24.0s), 242/497 VUs, 1414 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m25.0s), 233/497 VUs, 1423 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m26.0s), 226/497 VUs, 1430 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m27.0s), 212/497 VUs, 1444 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m28.0s), 198/497 VUs, 1458 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m29.0s), 196/497 VUs, 1460 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+running (1m30.0s), 195/497 VUs, 1461 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 471/471 VUs  1m0s  20.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{scenario:control_traffic}
+    ✓ 'p(95)<999999' p(95)=306.24ms
+
+    http_req_duration{scenario:pg_slow_cancel,name:accept}
+    ✓ 'p(95)<999999' p(95)=194.87ms
+
+    http_req_failed{scenario:control_traffic}
+    ✓ 'rate<=1' rate=0.00%
+
+    http_req_failed{scenario:pg_slow_cancel}
+    ✓ 'rate<=1' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 2041   22.675396/s
+    checks_succeeded...: 84.17% 1718 out of 2041
+    checks_failed......: 15.82% 323 out of 2041
+
+    ✓ control 200
+    ✓ accept 202
+    ✗ cancel completed
+      ↳  16% — ✓ 62 / ✗ 323
+
+    CUSTOM
+    cancel_completion_duration..................: avg=45.93s  min=8.61s  med=48.15s  max=53.64s p(90)=51.35s   p(95)=51.92s  
+
+    HTTP
+    http_req_duration...........................: avg=38.05ms min=1.53ms med=9.32ms  max=2.76s  p(90)=69.53ms  p(95)=160.23ms
+      { expected_response:true }................: avg=38.05ms min=1.53ms med=9.32ms  max=2.76s  p(90)=69.53ms  p(95)=160.23ms
+      { scenario:control_traffic }..............: avg=54.94ms min=4.62ms med=9.48ms  max=2.54s  p(90)=149.17ms p(95)=306.24ms
+      { scenario:pg_slow_cancel,name:accept }...: avg=51.25ms min=11.1ms med=18.68ms max=2.53s  p(90)=88.49ms  p(95)=194.87ms
+    http_req_failed.............................: 0.00%  0 out of 17172
+      { scenario:control_traffic }..............: 0.00%  0 out of 1076
+      { scenario:pg_slow_cancel }...............: 0.00%  0 out of 16096
+    http_reqs...................................: 17172  190.779957/s
+
+    EXECUTION
+    dropped_iterations..........................: 746    8.288018/s
+    iteration_duration..........................: avg=12.14s  min=4.62ms med=13.57ms max=53.64s p(90)=48.46s   p(95)=50.08s  
+    iterations..................................: 1461   16.231628/s
+    vus.........................................: 195    min=20         max=471
+    vus_max.....................................: 497    min=60         max=497
+
+    NETWORK
+    data_received...............................: 4.7 MB 52 kB/s
+    data_sent...................................: 1.7 MB 19 kB/s
+
+
+
+
+running (1m30.0s), 000/497 VUs, 1461 complete and 195 interrupted iterations
+control_traffic ✓ [ 100% ] 00/25 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ✓ [ 100% ] 195/472 VUs  1m0s  20.00 iters/s
