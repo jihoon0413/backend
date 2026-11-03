@@ -1,0 +1,29 @@
+{
+  "id": "a1b2c3d4-0002-4000-8000-000000000002",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPathPattern": "/payments/.*/cancel"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 50,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "paymentKey": "wiremock-pay-key",
+      "orderId": "k6-stub-order",
+      "orderName": "k6 load test",
+      "status": "CANCELED",
+      "cancels": [
+        {
+          "cancellationKey": "wiremock-cancel-key",
+          "cancelAmount": 1000,
+          "cancelReason": "k6 load test",
+          "canceledAt": "2026-01-01T00:00:00+09:00",
+          "transactionKey": "wiremock-tx-key",
+          "receiptKey": "wiremock-receipt-key"
+        }
+      ]
+    }
+  }
+}

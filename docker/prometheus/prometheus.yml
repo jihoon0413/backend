@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: payment-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      # payment-service가 docker-compose 컨테이너로 뜰 때
+      - targets: [ 'payment-service:8300' ]
+      # payment-service를 local 프로필로 호스트(IDE/gradle)에서 직접 띄울 때
+      - targets: [ 'host.docker.internal:8300' ]

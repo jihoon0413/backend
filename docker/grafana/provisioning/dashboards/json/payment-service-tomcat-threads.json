@@ -1,0 +1,46 @@
+{
+  "title": "payment-service - Tomcat Threads",
+  "uid": "payment-service-tomcat-threads",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "refresh": "5s",
+  "time": { "from": "now-15m", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Tomcat threads busy (vs configured max)",
+      "type": "timeseries",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "custom": { "drawStyle": "line", "lineWidth": 2, "fillOpacity": 10 }
+        },
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "tomcat_threads_config_max_threads" },
+            "properties": [
+              { "id": "custom.lineStyle", "value": { "dash": [10, 10], "fill": "dash" } },
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } }
+            ]
+          }
+        ]
+      },
+      "targets": [
+        {
+          "expr": "tomcat_threads_busy_threads{application=\"payment-service\"}",
+          "legendFormat": "tomcat_threads_busy_threads",
+          "refId": "A"
+        },
+        {
+          "expr": "tomcat_threads_config_max_threads{application=\"payment-service\"}",
+          "legendFormat": "tomcat_threads_config_max_threads",
+          "refId": "B"
+        }
+      ]
+    }
+  ]
+}

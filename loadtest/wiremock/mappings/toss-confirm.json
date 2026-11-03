@@ -1,0 +1,24 @@
+{
+  "id": "a1b2c3d4-0001-4000-8000-000000000001",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPath": "/brandpay/payments/confirm"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 50,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "paymentKey": "wiremock-pay-key",
+      "orderId": "k6-stub-order",
+      "orderName": "k6 load test",
+      "status": "DONE",
+      "requestedAt": "2026-01-01T00:00:00+09:00",
+      "approvedAt": "2026-01-01T00:00:00+09:00",
+      "totalAmount": 1000,
+      "balanceAmount": 1000,
+      "type": "BRANDPAY"
+    }
+  }
+}

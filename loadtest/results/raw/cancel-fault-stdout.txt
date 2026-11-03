@@ -1,0 +1,1235 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: facade-isolation-cancel-test.js
+        output: Prometheus remote write (http://localhost:9090/api/v1/write)
+
+     scenarios: (100.00%) 2 scenarios, 450 max VUs, 1m30s max duration (incl. graceful stop):
+              * control_traffic: 20.00 iterations/s for 1m0s (maxVUs: 10-50, exec: hitControlEndpoint, gracefulStop: 30s)
+              * pg_slow_cancel: 30.00 iterations/s for 1m0s (maxVUs: 50-400, exec: cancelPayment, gracefulStop: 30s)
+
+
+running (0m01.0s), 030/060 VUs, 20 complete and 0 interrupted iterations
+control_traffic   [   2% ] 00/10 VUs    0m01.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   2% ] 030/050 VUs  0m01.0s/1m0s  30.00 iters/s
+
+running (0m02.0s), 055/065 VUs, 40 complete and 0 interrupted iterations
+control_traffic   [   3% ] 00/10 VUs    0m02.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   3% ] 055/055 VUs  0m02.0s/1m0s  30.00 iters/s
+
+running (0m03.0s), 070/080 VUs, 60 complete and 0 interrupted iterations
+control_traffic   [   5% ] 00/10 VUs    0m03.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   5% ] 070/070 VUs  0m03.0s/1m0s  30.00 iters/s
+
+running (0m04.0s), 085/095 VUs, 80 complete and 0 interrupted iterations
+control_traffic   [   7% ] 00/10 VUs    0m04.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   7% ] 085/085 VUs  0m04.0s/1m0s  30.00 iters/s
+
+running (0m05.0s), 100/110 VUs, 100 complete and 0 interrupted iterations
+control_traffic   [   8% ] 00/10 VUs    0m05.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [   8% ] 100/100 VUs  0m05.0s/1m0s  30.00 iters/s
+
+running (0m06.0s), 115/125 VUs, 120 complete and 0 interrupted iterations
+control_traffic   [  10% ] 00/10 VUs    0m06.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  10% ] 115/115 VUs  0m06.0s/1m0s  30.00 iters/s
+
+running (0m07.0s), 130/140 VUs, 140 complete and 0 interrupted iterations
+control_traffic   [  12% ] 00/10 VUs    0m07.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  12% ] 130/130 VUs  0m07.0s/1m0s  30.00 iters/s
+
+running (0m08.0s), 145/155 VUs, 160 complete and 0 interrupted iterations
+control_traffic   [  13% ] 00/10 VUs    0m08.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  13% ] 145/145 VUs  0m08.0s/1m0s  30.00 iters/s
+
+running (0m09.0s), 150/161 VUs, 199 complete and 0 interrupted iterations
+control_traffic   [  15% ] 00/10 VUs    0m09.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  15% ] 150/151 VUs  0m09.0s/1m0s  30.00 iters/s
+
+running (0m10.0s), 165/176 VUs, 219 complete and 0 interrupted iterations
+control_traffic   [  17% ] 00/10 VUs    0m10.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  17% ] 165/166 VUs  0m10.0s/1m0s  30.00 iters/s
+
+running (0m11.0s), 180/191 VUs, 239 complete and 0 interrupted iterations
+control_traffic   [  18% ] 00/10 VUs    0m11.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  18% ] 180/181 VUs  0m11.0s/1m0s  30.00 iters/s
+
+running (0m12.0s), 195/206 VUs, 259 complete and 0 interrupted iterations
+control_traffic   [  20% ] 00/10 VUs    0m12.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  20% ] 195/196 VUs  0m12.0s/1m0s  30.00 iters/s
+
+running (0m13.0s), 222/223 VUs, 265 complete and 0 interrupted iterations
+control_traffic   [  22% ] 12/12 VUs    0m13.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  22% ] 210/211 VUs  0m13.0s/1m0s  30.00 iters/s
+
+running (0m14.0s), 247/247 VUs, 265 complete and 0 interrupted iterations
+control_traffic   [  23% ] 22/22 VUs    0m14.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  23% ] 225/225 VUs  0m14.0s/1m0s  30.00 iters/s
+
+running (0m15.0s), 272/272 VUs, 265 complete and 0 interrupted iterations
+control_traffic   [  25% ] 32/32 VUs    0m15.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  25% ] 240/240 VUs  0m15.0s/1m0s  30.00 iters/s
+
+running (0m16.0s), 297/297 VUs, 265 complete and 0 interrupted iterations
+control_traffic   [  27% ] 42/42 VUs    0m16.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  27% ] 255/255 VUs  0m16.0s/1m0s  30.00 iters/s
+
+running (0m17.0s), 303/303 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  28% ] 43/43 VUs    0m17.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  28% ] 260/260 VUs  0m17.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:10+09:00" level=warning msg="Insufficient VUs, reached 50 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=control_traffic
+
+running (0m18.0s), 325/325 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  30% ] 50/50 VUs    0m18.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  30% ] 275/275 VUs  0m18.0s/1m0s  30.00 iters/s
+
+running (0m19.0s), 340/340 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  32% ] 50/50 VUs    0m19.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  32% ] 290/290 VUs  0m19.0s/1m0s  30.00 iters/s
+
+running (0m20.0s), 355/355 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  33% ] 50/50 VUs    0m20.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  33% ] 305/305 VUs  0m20.0s/1m0s  30.00 iters/s
+
+running (0m21.0s), 370/370 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  35% ] 50/50 VUs    0m21.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  35% ] 320/320 VUs  0m21.0s/1m0s  30.00 iters/s
+
+running (0m22.0s), 385/385 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  37% ] 50/50 VUs    0m22.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  37% ] 335/335 VUs  0m22.0s/1m0s  30.00 iters/s
+
+running (0m23.0s), 400/400 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  38% ] 50/50 VUs    0m23.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  38% ] 350/350 VUs  0m23.0s/1m0s  30.00 iters/s
+
+running (0m24.0s), 415/415 VUs, 303 complete and 0 interrupted iterations
+control_traffic   [  40% ] 50/50 VUs    0m24.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  40% ] 365/365 VUs  0m24.0s/1m0s  30.00 iters/s
+
+running (0m25.0s), 420/420 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  42% ] 50/50 VUs    0m25.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  42% ] 370/370 VUs  0m25.0s/1m0s  30.00 iters/s
+
+running (0m26.0s), 435/435 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  43% ] 50/50 VUs    0m26.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  43% ] 385/385 VUs  0m26.0s/1m0s  30.00 iters/s
+
+running (0m27.0s), 449/450 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  45% ] 50/50 VUs    0m27.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  45% ] 399/400 VUs  0m27.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:19+09:00" level=warning msg="Insufficient VUs, reached 400 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=pg_slow_cancel
+
+running (0m28.0s), 450/450 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  47% ] 50/50 VUs    0m28.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  47% ] 400/400 VUs  0m28.0s/1m0s  30.00 iters/s
+
+running (0m29.0s), 450/450 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  48% ] 50/50 VUs    0m29.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  48% ] 400/400 VUs  0m29.0s/1m0s  30.00 iters/s
+
+running (0m30.0s), 450/450 VUs, 337 complete and 0 interrupted iterations
+control_traffic   [  50% ] 50/50 VUs    0m30.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  50% ] 400/400 VUs  0m30.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m31.1s), 449/450 VUs, 346 complete and 0 interrupted iterations
+control_traffic   [  52% ] 50/50 VUs    0m31.1s/1m0s  20.00 iters/s
+pg_slow_cancel    [  52% ] 399/400 VUs  0m31.1s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:23+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m33.9s), 448/450 VUs, 353 complete and 0 interrupted iterations
+control_traffic   [  56% ] 50/50 VUs    0m33.9s/1m0s  20.00 iters/s
+pg_slow_cancel    [  56% ] 398/400 VUs  0m33.9s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m34.0s), 437/450 VUs, 396 complete and 0 interrupted iterations
+control_traffic   [  57% ] 50/50 VUs    0m34.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  57% ] 387/400 VUs  0m34.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:26+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m35.0s), 427/450 VUs, 447 complete and 0 interrupted iterations
+control_traffic   [  58% ] 50/50 VUs    0m35.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  58% ] 377/400 VUs  0m35.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:27+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m36.0s), 443/450 VUs, 461 complete and 0 interrupted iterations
+control_traffic   [  60% ] 50/50 VUs    0m36.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  60% ] 393/400 VUs  0m36.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:28+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m37.0s), 449/450 VUs, 476 complete and 0 interrupted iterations
+control_traffic   [  62% ] 50/50 VUs    0m37.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  62% ] 399/400 VUs  0m37.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:29+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m38.0s), 449/450 VUs, 491 complete and 0 interrupted iterations
+control_traffic   [  63% ] 50/50 VUs    0m38.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  63% ] 399/400 VUs  0m38.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:30+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m39.0s), 441/450 VUs, 521 complete and 0 interrupted iterations
+control_traffic   [  65% ] 41/50 VUs    0m39.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  65% ] 400/400 VUs  0m39.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:31+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m40.0s), 450/450 VUs, 536 complete and 0 interrupted iterations
+control_traffic   [  67% ] 50/50 VUs    0m40.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  67% ] 400/400 VUs  0m40.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:32+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m41.0s), 450/450 VUs, 551 complete and 0 interrupted iterations
+control_traffic   [  68% ] 50/50 VUs    0m41.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  68% ] 400/400 VUs  0m41.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:33+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m42.0s), 450/450 VUs, 566 complete and 0 interrupted iterations
+control_traffic   [  70% ] 50/50 VUs    0m42.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  70% ] 400/400 VUs  0m42.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:34+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:35+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:35+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m45.4s), 450/450 VUs, 576 complete and 0 interrupted iterations
+control_traffic   [  76% ] 50/50 VUs    0m45.4s/1m0s  20.00 iters/s
+pg_slow_cancel    [  76% ] 400/400 VUs  0m45.4s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m46.0s), 449/450 VUs, 588 complete and 0 interrupted iterations
+control_traffic   [  77% ] 50/50 VUs    0m46.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  77% ] 399/400 VUs  0m46.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:38+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m47.0s), 449/450 VUs, 613 complete and 0 interrupted iterations
+control_traffic   [  78% ] 50/50 VUs    0m47.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  78% ] 399/400 VUs  0m47.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:39+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m48.0s), 449/450 VUs, 628 complete and 0 interrupted iterations
+control_traffic   [  80% ] 50/50 VUs    0m48.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  80% ] 399/400 VUs  0m48.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:40+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m49.0s), 449/450 VUs, 643 complete and 0 interrupted iterations
+control_traffic   [  82% ] 50/50 VUs    0m49.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  82% ] 399/400 VUs  0m49.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:41+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m50.0s), 439/450 VUs, 669 complete and 0 interrupted iterations
+control_traffic   [  83% ] 41/50 VUs    0m50.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  83% ] 398/400 VUs  0m50.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:42+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m51.0s), 449/450 VUs, 689 complete and 0 interrupted iterations
+control_traffic   [  85% ] 50/50 VUs    0m51.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  85% ] 399/400 VUs  0m51.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:43+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m52.0s), 449/450 VUs, 704 complete and 0 interrupted iterations
+control_traffic   [  87% ] 50/50 VUs    0m52.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  87% ] 399/400 VUs  0m52.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:44+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m53.0s), 449/450 VUs, 718 complete and 0 interrupted iterations
+control_traffic   [  88% ] 50/50 VUs    0m53.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  88% ] 399/400 VUs  0m53.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:45+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m54.0s), 450/450 VUs, 731 complete and 0 interrupted iterations
+control_traffic   [  90% ] 50/50 VUs    0m54.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  90% ] 400/400 VUs  0m54.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:46+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m55.0s), 449/450 VUs, 757 complete and 0 interrupted iterations
+control_traffic   [  92% ] 50/50 VUs    0m55.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  92% ] 399/400 VUs  0m55.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:47+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m57.7s), 439/450 VUs, 773 complete and 0 interrupted iterations
+control_traffic   [  96% ] 50/50 VUs    0m57.7s/1m0s  20.00 iters/s
+pg_slow_cancel    [  96% ] 389/400 VUs  0m57.7s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:50+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (0m58.0s), 433/450 VUs, 787 complete and 0 interrupted iterations
+control_traffic   [  97% ] 50/50 VUs    0m58.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  97% ] 383/400 VUs  0m58.0s/1m0s  30.00 iters/s
+
+running (0m59.0s), 450/450 VUs, 787 complete and 0 interrupted iterations
+control_traffic   [  98% ] 50/50 VUs    0m59.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [  98% ] 400/400 VUs  0m59.0s/1m0s  30.00 iters/s
+
+running (1m00.0s), 450/450 VUs, 787 complete and 0 interrupted iterations
+control_traffic   [ 100% ] 50/50 VUs    1m00.0s/1m0s  20.00 iters/s
+pg_slow_cancel    [ 100% ] 400/400 VUs  1m00.0s/1m0s  30.00 iters/s
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m01.0s), 442/450 VUs, 795 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:53+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m02.0s), 436/450 VUs, 801 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+
+running (1m03.0s), 436/450 VUs, 801 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m04.0s), 422/450 VUs, 815 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:56+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m05.0s), 363/450 VUs, 874 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:57+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m06.0s), 333/450 VUs, 904 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:58+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m07.0s), 312/450 VUs, 925 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:08:59+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m08.0s), 297/450 VUs, 940 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:00+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m09.0s), 275/450 VUs, 962 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:01+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m10.0s), 251/450 VUs, 986 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:02+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m11.0s), 236/450 VUs, 1001 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:03+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m12.0s), 221/450 VUs, 1016 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:04+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:05+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:05+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m13.0s), 213/450 VUs, 1024 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+
+running (1m14.0s), 213/450 VUs, 1024 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+
+running (1m15.0s), 213/450 VUs, 1024 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m16.0s), 200/450 VUs, 1037 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:08+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m17.0s), 175/450 VUs, 1062 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:09+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m18.0s), 160/450 VUs, 1077 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:10+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m19.0s), 145/450 VUs, 1092 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:11+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+
+running (1m20.0s), 129/450 VUs, 1108 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:12+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m21.0s), 099/450 VUs, 1138 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:13+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m22.0s), 084/450 VUs, 1153 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:14+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m23.0s), 070/450 VUs, 1167 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:15+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m24.0s), 056/450 VUs, 1181 complete and 0 interrupted iterations
+control_traffic ↓ [ 100% ] 50/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:16+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Get \"http://localhost:8300/actuator/health\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m25.0s), 031/450 VUs, 1206 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:17+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m26.0s), 027/450 VUs, 1210 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+
+running (1m27.0s), 027/450 VUs, 1210 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+running (1m28.0s), 017/450 VUs, 1220 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ↓ [ 100% ] 400/400 VUs  1m0s  30.00 iters/s
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:20+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+time="2026-10-08T15:09:21+09:00" level=warning msg="Request Failed" error="Post \"http://localhost:8300/api/payments/cancel\": request timeout"
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{scenario:control_traffic}
+    ✓ 'p(95)<999999' p(95)=30s
+
+    http_req_duration{scenario:pg_slow_cancel}
+    ✓ 'p(95)<999999' p(95)=31.32s
+
+    http_req_failed{scenario:control_traffic}
+    ✓ 'rate<=1' rate=13.49%
+
+    http_req_failed{scenario:pg_slow_cancel}
+    ✓ 'rate<=1' rate=90.33%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 1237   13.971837/s
+    checks_succeeded...: 33.14% 410 out of 1237
+    checks_failed......: 66.85% 827 out of 1237
+
+    ✗ control 200
+      ↳  86% — ✓ 327 / ✗ 51
+    ✗ cancel 200
+      ↳  9% — ✓ 83 / ✗ 776
+
+    HTTP
+    http_req_duration................: avg=22.04s min=2.53ms med=29.99s max=32.7s  p(90)=30s    p(95)=30.73s
+      { expected_response:true }.....: avg=5.73s  min=2.53ms med=5.51ms max=27.08s p(90)=20.75s p(95)=22.05s
+      { scenario:control_traffic }...: avg=7.42s  min=2.53ms med=4.94ms max=30.01s p(90)=30s    p(95)=30s   
+      { scenario:pg_slow_cancel }....: avg=28.48s min=7.99s  med=29.99s max=32.7s  p(90)=30s    p(95)=31.32s
+    http_req_failed..................: 66.85% 827 out of 1237
+      { scenario:control_traffic }...: 13.49% 51 out of 378
+      { scenario:pg_slow_cancel }....: 90.33% 776 out of 859
+    http_reqs........................: 1237   13.971837/s
+
+    EXECUTION
+    dropped_iterations...............: 1763   19.912974/s
+    iteration_duration...............: avg=22.04s min=2.53ms med=30s    max=32.7s  p(90)=30s    p(95)=30.73s
+    iterations.......................: 1237   13.971837/s
+    vus..............................: 17     min=17          max=450
+    vus_max..........................: 450    min=60          max=450
+
+    NETWORK
+    data_received....................: 90 kB  1.0 kB/s
+    data_sent........................: 274 kB 3.1 kB/s
+
+
+
+
+running (1m28.5s), 000/450 VUs, 1237 complete and 0 interrupted iterations
+control_traffic ✓ [ 100% ] 00/50 VUs    1m0s  20.00 iters/s
+pg_slow_cancel  ✓ [ 100% ] 000/400 VUs  1m0s  30.00 iters/s

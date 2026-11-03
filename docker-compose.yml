@@ -141,6 +141,44 @@ services:
       kafka: { condition: service_healthy }
     networks: [ bubbletea-net ]
 
+  wiremock:
+    image: wiremock/wiremock:3.9.1
+    container_name: bubbletea-wiremock
+    ports:
+      - "8089:8080"
+    volumes:
+      - ./loadtest/wiremock/mappings:/home/wiremock/mappings:ro
+    networks: [ bubbletea-net ]
+
+  prometheus:
+    image: prom/prometheus:v3.0.1
+    container_name: bubbletea-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      # k6가 --out experimental-prometheus-rw 로 부하테스트 지표를 바로 이 Prometheus에 쏴주기 위해 필요
+      - --web.enable-remote-write-receiver
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    networks: [ bubbletea-net ]
+
+  grafana:
+    image: grafana/grafana:11.4.0
+    container_name: bubbletea-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
+    depends_on:
+      - prometheus
+    networks: [ bubbletea-net ]
+
   config-server:
     build: {
       context: .,
